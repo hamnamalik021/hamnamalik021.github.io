@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hamna Malik | Embedded Systems, IoT, Edge AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf7f2;--sand:#f1ebe0;--card:#fffdf9;--text:#2b2f33;--muted:#5d6469;--sage:#8fa89a;--sage-d:#4f6b5c;--blue:#8aa4bd;--blue-d:#47637e;--line:#e2dacb;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.65 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3{font-family:Newsreader,Georgia,"Times New Roman",serif;font-weight:500;line-height:1.2;margin:0}
+a{color:var(--blue-d)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue-d);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-family:Newsreader,Georgia,serif;font-size:20px;text-decoration:none;color:var(--text)}
+nav{display:flex;gap:22px;font-size:14.5px}
+nav a{color:var(--muted);text-decoration:none}nav a:hover{color:var(--text)}
+section{padding:72px 0}
+.alt{background:var(--sand)}
+h2{font-size:32px;margin-bottom:8px}
+.lead{color:var(--muted);max-width:62ch;margin:0 0 32px}
+.hero{padding:64px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+h1{font-size:clamp(36px,5.2vw,56px);letter-spacing:-.01em}
+.sub{font-family:Newsreader,Georgia,serif;font-size:22px;color:var(--sage-d);margin:10px 0 18px}
+.hero p{max-width:52ch;color:var(--muted);margin:0 0 14px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 20px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:500;text-decoration:none;font-size:15px;border:1px solid var(--sage-d)}
+.btn.p{background:var(--sage-d);color:var(--bg)}.btn.s{color:var(--sage-d)}
+.soc{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}
+.ph{color:var(--muted);border-bottom:1px dashed var(--muted);font-size:14px}
+.hero svg{width:100%;height:auto;display:block}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.sk div{border-top:2px solid var(--sage);padding:14px 0 0}
+.sk h3{font-size:19px;margin-bottom:6px}.sk p{margin:0;color:var(--muted);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;grid-column:span 2}
+.card.f{grid-column:span 6;flex-direction:row}
+.card.f .vis{flex:0 0 44%;border-bottom:0;border-right:1px solid var(--line)}
+.card:nth-child(n+5){grid-column:span 3}
+.vis{background:var(--sand);border-bottom:1px solid var(--line);padding:14px 14px 8px}
+.vis svg{width:100%;height:auto;display:block}
+.cap{font-size:12.5px;color:var(--muted);margin:6px 0 0}
+.body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:21px}
+.st{align-self:flex-start;font-size:13px;font-weight:500;color:var(--blue-d);border:1px solid var(--blue);border-radius:99px;padding:2px 12px}
+.body p{margin:0;font-size:15px;color:var(--muted)}
+.body ul{margin:0;padding-left:18px;font-size:14.5px}.body li{margin:2px 0}
+.note{font-size:14px;background:var(--sand);border-left:3px solid var(--blue);padding:8px 12px;border-radius:0 6px 6px 0;margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.tags span{font-size:12.5px;background:var(--sand);border:1px solid var(--line);border-radius:4px;padding:1px 8px;color:var(--text)}
+.more{font-size:14px;font-weight:500}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.mini{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
+.mini h3{font-size:19px}.mini p{margin:0;color:var(--muted);font-size:15px}
+.cred{border-left:3px solid var(--sage);padding:4px 0 4px 18px}
+.cred h3{font-size:19px;margin-bottom:4px}.cred p{margin:0 0 8px;color:var(--muted);font-size:15px}
+.opp{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.opp ul{padding-left:18px;margin:0 0 8px}.opp li{margin:6px 0}
+.cl{display:grid;gap:12px;align-content:start}
+.cl div{border-bottom:1px solid var(--line);padding-bottom:10px;font-size:15px}
+.cl b{display:block;font-weight:500;font-size:14px;color:var(--muted)}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+@media(max-width:999px){.card,.card:nth-child(n+5){grid-column:span 3}.card.f{grid-column:span 6}.card:last-child{grid-column:span 6}}
+@media(max-width:760px){.hero .wrap,.opp,.two{grid-template-columns:1fr}nav{display:none}section{padding:52px 0}
+.grid{grid-template-columns:1fr}.card,.card.f,.card:nth-child(n+5),.card:last-child{grid-column:auto}.card.f{flex-direction:column}
+.card.f .vis{border-right:0;border-bottom:1px solid var(--line)}}
+.bx{animation:bp 3.6s ease-in-out infinite}@keyframes bp{0%,100%{stroke-width:1.4}18%{stroke-width:3.2}}
+.dash{animation:df 1.2s linear infinite}@keyframes df{to{stroke-dashoffset:-14}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bx,.dash{animation:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="#top">Hamna Malik</a>
+<nav aria-label="Sections"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#more">Additional work</a><a href="#development">Development</a><a href="#contact">Contact</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="wrap">
+<div>
+<h1>Hamna Malik</h1>
+<div class="sub">Embedded Systems | IoT | Edge AI</div>
+<p>Computer Engineering student at CUST, expected to graduate in 2027 (CUST ’27).</p>
+<p>I build practical engineering systems by combining microcontrollers, sensor integration, connected platforms, digital signal processing, and intelligent data analysis.</p>
+<div class="btns"><a class="btn p" href="#projects">Explore My Projects</a><a class="btn s" href="#contact">Contact Me</a></div>
+<div class="soc" id="heroLinks"></div>
+</div>
+<svg viewBox="0 0 400 300" role="img" aria-label="A continuous sensor signal being sampled into discrete digital values, with circuit traces below">
+<rect x="1" y="1" width="398" height="298" rx="10" fill="var(--sand)" stroke="var(--line)"/>
+<line x1="24" y1="120" x2="376" y2="120" stroke="var(--line)"/>
+<path id="an" fill="none" stroke="var(--blue)" stroke-width="2"/>
+<path id="st" fill="none" stroke="var(--sage-d)" stroke-width="1.6"/>
+<g id="dots" fill="var(--sage-d)"></g>
+<text x="24" y="38" font-size="12" fill="var(--muted)" font-family="Figtree,sans-serif">Analog sensor signal</text>
+<text x="376" y="38" font-size="12" fill="var(--muted)" text-anchor="end" font-family="Figtree,sans-serif">Sampled values</text>
+<g fill="none" stroke="var(--sage)" stroke-width="1.4"><path d="M24 220h70v-22h60M154 198v-0M24 252h120v-14h40v14h80l16-16h72M200 220h56l14 14h106"/>
+<rect x="150" y="186" width="26" height="22" rx="3" stroke="var(--blue-d)"/><rect x="262" y="206" width="26" height="22" rx="3" stroke="var(--blue-d)"/></g>
+<g fill="var(--sage-d)"><circle cx="24" cy="220" r="3"/><circle cx="24" cy="252" r="3"/><circle cx="376" cy="234" r="3"/><circle cx="376" cy="252" r="3"/></g>
+</svg>
+</div></section>
+
+<section id="about" class="alt"><div class="wrap">
+<h2>About me</h2>
+<p class="lead" style="margin-bottom:0">I am drawn to the point where hardware meets software: embedded hardware and firmware, IoT connectivity, intelligent sensing, edge computing, and applied AI. I like projects where a sensor reading has to travel reliably from a microcontroller to something a person can act on. I am interested in practical engineering roles, hands-on technical learning, industry mentorship, and collaborative R&amp;D.</p>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Technical skills</h2>
+<p class="lead">Grouped by the kind of work they support.</p>
+<div class="sk">
+<div><h3>Embedded systems and hardware</h3><p>ESP32, STM32, Arduino IDE, ultrasonic sensors, environmental sensors, sensor integration, microcontroller-based systems</p></div>
+<div><h3>IoT and connectivity</h3><p>Firebase Realtime Database, wireless data communication, real-time monitoring, cloud-connected devices, web dashboards</p></div>
+<div><h3>AI and machine learning</h3><p>Python, YOLOv8, dataset augmentation, model evaluation, Decision Tree, SVM, Random Forest, XGBoost</p></div>
+<div><h3>Digital signal processing</h3><p>Speech preprocessing, noise cancellation, FFT and digital filtering concepts from coursework and planned for SHM work</p></div>
+<div><h3>Engineering tools</h3><p>Cisco Packet Tracer, Mininet, RYU, WSL, Oracle XE, PL/SQL, Node.js and Express</p></div>
+</div></div></section>
+
+<section id="projects" class="alt"><div class="wrap">
+<h2>Featured projects</h2>
+<p class="lead">Animated illustrations show how each system works. They are visual explanations, not photos or results, and can be swapped for real screenshots later.</p>
+<div class="grid" id="feat"></div>
+</div></section>
+
+<section id="more"><div class="wrap">
+<h2>Additional engineering projects</h2>
+<p class="lead">Networking and backend work that supports my systems background.</p>
+<div class="two" id="addl"></div>
+</div></section>
+
+<section id="development" class="alt"><div class="wrap">
+<h2>Professional development and memberships</h2>
+<p class="lead"></p>
+<div class="two">
+<div class="cred"><h3>Aspire Leaders Program, Cohort 3, 2026</h3><p>A 40-hour leadership and professional development program.</p><span id="lkAspire"></span></div>
+<div class="cred"><h3>IEEE Student Member</h3><p>Student membership in IEEE, as part of my involvement in engineering and technology.</p></div>
+</div></div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Open to engineering opportunities</h2>
+<p class="lead">I am looking for opportunities to build and learn on real systems.</p>
+<div class="opp">
+<div><ul>
+<li>Part-time embedded systems and IoT roles</li>
+<li>Engineering internships and hands-on technical learning</li>
+<li>Industry collaboration and technical co-supervision for my final-year project</li>
+<li>Applied R&amp;D opportunities and potential project support</li></ul></div>
+<div class="cl" id="contactList"></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">Hamna Malik, Computer Engineering, CUST ’27</div></footer>
+
+<script>
+// Fill these in to activate links. Empty values show as dashed placeholders.
+var L={email:"malikhamna615@gmail.com",linkedin:"https://linkedin.com/in/hamna-malik-633327219",github:"https://github.com/hamnamalik021",docs:"",aspire:""};
+function lk(k,label,pre){var v=L[k];return v?'<a href="'+(pre||"")+v+'"'+(pre?'':' target="_blank" rel="noopener"')+'>'+label+'</a>':'<span class="ph">'+label+' (add link)</span>'}
+document.getElementById("heroLinks").innerHTML=lk("linkedin","LinkedIn")+lk("github","GitHub")+lk("email","Email","mailto:");
+document.getElementById("lkAspire").innerHTML=lk("aspire","Program or certificate link");
+document.getElementById("contactList").innerHTML=[["Email",lk("email","malikhamna615@gmail.com","mailto:")],["Phone","+92 3281966098"],["LinkedIn",lk("linkedin","linkedin.com/in/hamna-malik-633327219")],["GitHub",lk("github","github.com/hamnamalik021")]].map(function(r){return"<div><b>"+r[0]+"</b>"+r[1]+"</div>"}).join("");
+
+// analog vs sampled signal in hero
+(function(){var a="",s="",d="",y0=0;for(var x=24;x<=376;x+=2){var y=80+34*Math.sin((x-24)/38)+10*Math.sin((x-24)/11);a+=(x==24?"M":"L")+x+" "+y.toFixed(1)}
+for(var x=24;x<=376;x+=22){var y=80+34*Math.sin((x-24)/38)+10*Math.sin((x-24)/11);var q=Math.round(y/8)*8;s+=(x==24?"M":"L")+x+" "+q+" L"+(x+22)+" "+q;d+='<circle cx="'+x+'" cy="'+y.toFixed(1)+'" r="2.6"/>'}
+document.getElementById("an").setAttribute("d",a);document.getElementById("st").setAttribute("d",s);document.getElementById("dots").innerHTML=d})();
+
+// diagram helpers (illustrative only)
+var F='font-family="Figtree,sans-serif"';
+function pipe(items,dash){var n=items.length,g=14,w=(340-(n-1)*g)/n,o='<svg viewBox="0 0 360 110" role="img" aria-label="Illustrative system diagram">';
+items.forEach(function(t,i){var x=10+i*(w+g),p=t.split("|");
+o+='<rect class="bx" style="animation-delay:'+(i*.7)+'s" x="'+x+'" y="30" width="'+w+'" height="50" rx="6" fill="var(--card)" stroke="'+(i%2?'var(--blue-d)':'var(--sage-d)')+'" stroke-width="1.4"'+(dash?' stroke-dasharray="5 3"':'')+'/>';
+p.forEach(function(l,j){o+='<text x="'+(x+w/2)+'" y="'+(p.length>1?51+j*13:59)+'" font-size="10.5" text-anchor="middle" fill="var(--text)" '+F+'>'+l+'</text>'});
+if(i<n-1)o+='<path d="M'+(x+w+2)+' 55h'+(g-4)+'" stroke="var(--muted)" stroke-width="1.4"/>'});
+o+='<path d="M10 14H350" stroke="var(--line)" stroke-width="1.4" stroke-dasharray="2 4"/>';[0,1.5].forEach(function(b){o+='<circle r="3.5" fill="var(--blue-d)"><animateMotion dur="3s" begin="-'+b+'s" repeatCount="indefinite" path="M10 14H350"/></circle>'});return o+'</svg>'}
+function bars(){var m=["Decision Tree","SVM","Random Forest","XGBoost"],o='<svg viewBox="0 0 360 110" role="img" aria-label="Placeholder for a model comparison chart"><line x1="30" y1="86" x2="345" y2="86" stroke="var(--muted)"/><line x1="30" y1="12" x2="30" y2="86" stroke="var(--muted)"/>';
+m.forEach(function(t,i){var x=48+i*78;o+='<rect x="'+x+'" y="26" width="46" height="60" rx="3" fill="none" stroke="var(--sage-d)" stroke-dasharray="4 3" class="dash"/><text x="'+(x+23)+'" y="100" font-size="9.5" text-anchor="middle" fill="var(--text)" '+F+'>'+t+'</text>'});
+return o+'<text x="190" y="20" font-size="10" text-anchor="middle" fill="var(--muted)" '+F+'>Comparison results to be added</text></svg>'}
+function wave0(){var a="",b="";for(var x=10;x<=350;x+=2){var t=(x-10)/14;a+=(x==10?"M":"L")+x+" "+(34+14*Math.sin(t)+7*Math.sin(t*5.3+1)*Math.cos(t*9)).toFixed(1);b+=(x==10?"M":"L")+x+" "+(84+14*Math.sin(t)).toFixed(1)}
+return '<svg viewBox="0 0 360 110" role="img" aria-label="Illustrative noisy and filtered speech waveform"><path d="'+a+'" fill="none" stroke="var(--blue-d)" stroke-width="1.3"/><path d="'+b+'" fill="none" stroke="var(--sage-d)" stroke-width="1.6"/><text x="350" y="14" font-size="10" text-anchor="end" fill="var(--muted)" '+F+'>Noisy input</text><text x="350" y="108" font-size="10" text-anchor="end" fill="var(--muted)" '+F+'>Filtered output</text></svg>'}
+
+function shm(){var o='<svg viewBox="0 0 360 150" role="img" aria-label="Animated illustration of distributed sensor nodes on a structure sending data to an edge processor"><path d="M60 70V118M300 70V118M40 118H80M280 118H320" stroke="var(--muted)" stroke-width="2" fill="none"/><path d="M20 70Q180 70 340 70" stroke="var(--sage-d)" stroke-width="3" fill="none"><animate attributeName="d" dur="1.6s" repeatCount="indefinite" values="M20 70Q180 70 340 70;M20 70Q180 77 340 70;M20 70Q180 70 340 70;M20 70Q180 64 340 70;M20 70Q180 70 340 70"/></path>';
+[80,180,280].forEach(function(x,i){var b=i*.8;o+='<path d="M'+x+' 66L180 40" stroke="var(--blue)" stroke-width="1.3" stroke-dasharray="4 3" fill="none" class="dash"/><circle cx="'+x+'" cy="70" r="5" fill="var(--blue-d)"/><circle cx="'+x+'" cy="70" r="5" fill="none" stroke="var(--blue-d)"><animate attributeName="r" values="5;24" dur="2.4s" begin="'+b+'s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;0" dur="2.4s" begin="'+b+'s" repeatCount="indefinite"/></circle>'});
+return o+'<rect x="125" y="10" width="110" height="30" rx="6" fill="var(--card)" stroke="var(--sage-d)" stroke-width="1.4"/><text x="180" y="29" font-size="11" text-anchor="middle" fill="var(--text)" '+F+'>Edge processing</text><text x="180" y="142" font-size="11" text-anchor="middle" fill="var(--muted)" '+F+'>Vibration, tilt, and strain nodes</text></svg>'}
+function vision(){var o='<svg viewBox="0 0 360 110" role="img" aria-label="Animated illustration of an image being scanned and sorted into one of five classes"><rect x="10" y="10" width="150" height="90" rx="6" fill="var(--card)" stroke="var(--muted)"/><circle cx="50" cy="60" r="16" fill="none" stroke="var(--sage-d)" stroke-width="2"/><rect x="84" y="42" width="30" height="30" fill="none" stroke="var(--blue-d)" stroke-width="2"/><path d="M126 76l12-26 12 26z" fill="none" stroke="var(--sage-d)" stroke-width="2"/><rect y="10" width="2.5" height="90" fill="var(--blue-d)"><animate attributeName="x" values="10;157" dur="2.5s" repeatCount="indefinite"/></rect><path d="M168 55h20" stroke="var(--muted)" stroke-width="1.4"/>';
+for(var i=1;i<=5;i++){var y=8+(i-1)*19;o+='<rect x="196" y="'+y+'" width="130" height="16" rx="4" fill="var(--sage)" fill-opacity=".12" stroke="var(--sage-d)"><animate attributeName="fill-opacity" values=".12;.7;.12;.12;.12" dur="5s" begin="'+(i-1)+'s" repeatCount="indefinite"/></rect><text x="261" y="'+(y+12)+'" font-size="10.5" text-anchor="middle" fill="var(--text)" '+F+'>Class '+i+'</text>'}
+return o+'</svg>'}
+function stick(){var o='<svg viewBox="0 0 360 110" role="img" aria-label="Animated illustration of an ultrasonic sensor sending waves toward an obstacle and triggering an audio alert"><defs><clipPath id="sc"><rect x="56" y="0" width="232" height="110"/></clipPath></defs><g clip-path="url(#sc)" fill="none" stroke="var(--blue-d)" stroke-width="1.6">';
+[0,.8,1.6].forEach(function(b){o+='<circle cx="56" cy="55" r="6"><animate attributeName="r" values="6;230" dur="2.4s" begin="'+b+'s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;0" dur="2.4s" begin="'+b+'s" repeatCount="indefinite"/></circle>'});
+return o+'</g><rect x="20" y="40" width="36" height="30" rx="5" fill="var(--card)" stroke="var(--sage-d)" stroke-width="1.5"/><rect x="290" y="26" width="30" height="58" rx="4" fill="var(--card)" stroke="var(--muted)" stroke-width="1.5"/><circle cx="30" cy="22" r="5" fill="var(--sage-d)"><animate attributeName="opacity" values=".15;.15;1;.15" dur="2.4s" repeatCount="indefinite"/></circle><text x="42" y="26" font-size="10.5" fill="var(--muted)" '+F+'>Audio alert</text><text x="38" y="90" font-size="10.5" text-anchor="middle" fill="var(--text)" '+F+'>Sensor</text><text x="305" y="100" font-size="10.5" text-anchor="middle" fill="var(--text)" '+F+'>Obstacle</text></svg>'}
+function wave(){var a="",b="";for(var x=10;x<=440;x+=2){var t=(x-10)/14;a+=(x==10?"M":"L")+x+" "+(34+12*Math.sin(t)+7*Math.sin(t*5+1)*Math.cos(t*9)).toFixed(1);b+=(x==10?"M":"L")+x+" "+(84+12*Math.sin(t)).toFixed(1)}
+var m='<animateTransform attributeName="transform" type="translate" from="0 0" to="-87.96 0" dur="2.6s" repeatCount="indefinite"/>';return '<svg viewBox="0 0 360 110" role="img" aria-label="Animated illustration of a noisy speech waveform and its filtered output"><defs><clipPath id="wc"><rect x="10" y="0" width="340" height="110"/></clipPath></defs><g clip-path="url(#wc)" fill="none"><path d="'+a+'" stroke="var(--blue-d)" stroke-width="1.3">'+m+'</path><path d="'+b+'" stroke="var(--sage-d)" stroke-width="1.8">'+m+'</path></g><text x="350" y="10" font-size="10" text-anchor="end" fill="var(--muted)" '+F+'>Noisy input</text><text x="350" y="108" font-size="10" text-anchor="end" fill="var(--muted)" '+F+'>Filtered output</text></svg>'}
+var P=[
+{t:"AI-Enhanced Distributed Structural Health Monitoring System",s:"Final Year Project: In Development",f:1,v:shm(),c:"Animated illustration of the planned architecture, not a built result",
+d:"A planned IoT and edge-computing prototype for assessing structural condition from distributed ESP32 sensor nodes. The goal is to catch vibration, tilt, and strain changes early and turn them into a condition assessment close to the structure.",
+u:["Accelerometer signals for vibration and tilt-related monitoring","Strain gauge for mechanical strain measurement","Wireless data transmission between nodes and a collection point","Digital signal processing and deep learning for structural condition assessment"],
+n:"Planned work: the complete hardware prototype, trained SHM model, and real-time assessment are not yet operational. Results will be added here as they are produced.",
+g:["ESP32","Accelerometer","Strain gauge","Wireless","DSP","Deep learning"]},
+{t:"IoT Smart Home Automation System",v:pipe(["ESP32|+ sensors","Firebase|Realtime DB","Web|dashboard"]),c:"Animated illustration of the data flow",
+d:"An ESP32-based home automation system that combines environmental, proximity, and motion sensing. A responsive dashboard shows live readings and lets users control connected devices remotely.",
+u:["Temperature, humidity, gas/fire, water-level, ultrasonic, and motion sensing","Cloud synchronization and live device status monitoring"],g:["ESP32","Firebase RTDB","Web dashboard","Sensors"]},
+{t:"Autonomous Robot Vision System",v:vision(),c:"Animated illustration of five-class image classification",
+d:"A YOLOv8 image-classification model trained on a custom dataset covering five object classes, built for autonomous robotics and embedded vision applications.",
+u:["Dataset augmentation to widen training variety","Model evaluation on the five-class task"],g:["YOLOv8","Image classification","Python","Augmentation"]},
+{t:"AI-Based Structural Fault Detection System",v:bars(),c:"Animated placeholder, results to be added",
+d:"Four machine-learning models were trained and benchmarked on a building health-monitoring dataset to classify structural faults.",
+u:["Decision Tree, SVM, Random Forest, and XGBoost compared on one dataset","Structural fault classification from monitoring data"],g:["Python","Decision Tree","SVM","Random Forest","XGBoost"]},
+{t:"Smart Blind Stick",v:stick(),c:"Animated illustration of obstacle sensing",
+d:"An assistive navigation device that detects obstacles with ultrasonic sensors and warns visually impaired users through audio feedback.",
+u:["Obstacle detection on an STM32 microcontroller","Firmware tuned for reliable real-time sensor processing"],g:["STM32","Ultrasonic sensors","Audio feedback","Firmware"]},
+{t:"Speech Preprocessing and Noise Cancellation",v:wave(),c:"Animated illustration of noise removal",
+d:"Digital signal processing techniques for speech preprocessing and noise cancellation, implemented and documented under faculty supervision.",
+u:["Preprocessing of speech signals before analysis","Noise cancellation, documented in a lab report"],g:["DSP","Speech preprocessing","Noise cancellation"]}];
+var A=[
+{t:"Smart Campus Network Redesign",d:"A three-tier hierarchical topology built in Cisco Packet Tracer. I diagnosed inter-VLAN routing failures caused by trunk-port misconfiguration and STP blocking, then simulated a software-defined network with Mininet and a RYU controller in WSL to model dynamic campus traffic flows.",g:["Cisco Packet Tracer","Mininet","RYU","WSL"]},
+{t:"Oracle PL/SQL E-Commerce Backend and Live Dashboard",d:"An Oracle XE schema with triggers, stored procedures, and views for an e-commerce order pipeline. A Node.js and Express REST API connects to Oracle XE to power a live-updating dashboard.",g:["Oracle XE","PL/SQL","Node.js","Express"]}];
+function tags(a){return '<div class="tags">'+a.map(function(x){return"<span>"+x+"</span>"}).join("")+"</div>"}
+function det(){return '<span class="ph more">Project details (add link)</span>'}
+document.getElementById("feat").innerHTML=P.map(function(p){
+return '<article class="card'+(p.f?' f':'')+'"><div class="vis">'+p.v+'<p class="cap">'+p.c+'</p></div><div class="body">'+(p.s?'<span class="st">'+p.s+'</span>':'')+'<h3>'+p.t+'</h3><p>'+p.d+'</p><ul>'+p.u.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul>'+(p.n?'<p class="note">'+p.n+'</p>':'')+tags(p.g)+det()+'</div></article>'}).join("");
+document.getElementById("addl").innerHTML=A.map(function(p){return '<article class="mini"><h3>'+p.t+'</h3><p>'+p.d+'</p>'+tags(p.g)+det()+'</article>'}).join("");
+if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){document.querySelectorAll("svg").forEach(function(s){if(s.pauseAnimations)s.pauseAnimations()})}
+</script>
+</body>
+</html>
